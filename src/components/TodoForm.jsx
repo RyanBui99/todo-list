@@ -3,6 +3,7 @@ import React, {useState, useEffect, useRef} from 'react'
 export default function TodoForm(props) {
     //Hook
     const [input, setInput] = useState(props.edit ? props.edit.value : '');
+    
 
     const inputRef = useRef(null)
 
@@ -17,15 +18,15 @@ export default function TodoForm(props) {
     const handleSubmit = e => {
         e.preventDefault();
 
-        props.onSubmit( {
-            id: Math.floor(Math.random() * 100000),
+        props.onSubmit({
+            id: Math.floor(Math.random() * 100),
             text: input
         })
         setInput('')
     }
 
     return (
-        <form className='todo-form'>
+        <form onSubmit={handleSubmit} className='todo-form'>
             {props.edit ? (
                 <div>
                     <input 
@@ -52,7 +53,7 @@ export default function TodoForm(props) {
                     className='todo-input'
                     />
                     <button onClick={handleSubmit} className='todo-button'>
-                        Add todo
+                        Add
                     </button>
                 </div>
             )}
