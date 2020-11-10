@@ -36,6 +36,7 @@ export default function TodoForm(props) {
                     name='text'
                     ref={inputRef}
                     className='todo-input edit'
+                    autoComplete='off'
                     />
 
                     <button onClick={handleSubmit} className='todo-button edit'>
@@ -43,7 +44,7 @@ export default function TodoForm(props) {
                     </button>
                 </div>
             ) : (
-                <div>
+                <div className='add-items-container'>
                     <input
                     placeholder='Add Task'
                     value={input}
@@ -51,6 +52,7 @@ export default function TodoForm(props) {
                     name='text'
                     ref={inputRef}
                     className='todo-input'
+                    autoComplete='off'
                     />
                     <button onClick={handleSubmit} className='todo-button'>
                         Add
