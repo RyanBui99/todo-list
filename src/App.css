@@ -24,6 +24,7 @@
     left: 50%;
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
+    
   }
   
   h1 {
@@ -74,11 +75,7 @@
   }
   
   .todo-button.edit {
-    background: linear-gradient(
-      90deg,
-      rgba(20, 159, 255, 1) 0%,
-      rgba(17, 122, 255, 1) 100%
-    );
+    background: #149fff;
     padding: 16px 22px;
   }
   
@@ -147,7 +144,9 @@
   }
 
   .todo-app {
-    width: fit-content;
+    height: 100%;
+    top: 50%;
+    overflow-y: auto;
   }
 }
   
